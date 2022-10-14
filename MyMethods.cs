@@ -8,5 +8,6 @@ namespace MyMethods
 {
     internal class MyMethods
     {
+
     }
 }
