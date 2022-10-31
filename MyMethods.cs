@@ -69,6 +69,18 @@ namespace MyMethods
         {
             return GetRun(p1.X, p2.X);
         }
+        /// <summary>
+        /// Gets the distance between 2 points, with double inputs
+        /// </summary>
+        /// <param name="x1">This is the first points x value</param>
+        /// <param name="y1">This is the first points y value</param>
+        /// <param name="x2">This is the seconds points x value</param>
+        /// <param name="y2">This is the seconds points y value</param>
+        /// <returns>The distance between the points</returns>
+        public static double GetDistance(double x1, double y1, double x2, double y2)
+        {
+            return GetHypotenuse((GetRise(y1,y2)), (GetRun(x1,x2)));
+        }
 
     }
 }
