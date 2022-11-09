@@ -81,6 +81,121 @@ namespace MyMethods
         {
             return GetHypotenuse((GetRise(y1,y2)), (GetRun(x1,x2)));
         }
-
+        /// <summary>
+        /// This gets the slope with 4 points
+        /// </summary>
+        /// <param name="x1">The x value of point 1</param>
+        /// <param name="y1">The y value of point 1</param>
+        /// <param name="x2">The x value of point 2</param>
+        /// <param name="y2">The y value of point 2</param>
+        /// <returns>The slope</returns>
+        public static double GetSlope(double x1, double y1, double x2, double y2)
+        {
+            return GetRise(y1, y2) / GetRun(x1, x2);
+        }
+        /// <summary>
+        /// Gets the slop from 2 points
+        /// </summary>
+        /// <param name="P1">Point 1</param>
+        /// <param name="P2">Point 2</param>
+        /// <returns>The slope</returns>
+        public static double GetSlope(Point P1, Point P2)
+        {
+            return GetSlope(P1.X, P1.Y, P2.X, P2.Y);
+        }
+        /// <summary>
+        /// Reverses a string
+        /// </summary>
+        /// <param name="str">Your string</param>
+        /// <returns>The reverse of the string</returns>
+        public static string Reverse(string str)
+        {
+            string newString ="";
+            for (int i = str.Length-1; i >=0 ; i--)
+            {
+                newString += str[i];
+            }
+            return newString;
+        }
+        /// <summary>
+        /// Gets the circumference with the radius
+        /// </summary>
+        /// <param name="radius">radius of your circle</param>
+        /// <returns>The circumference</returns>
+        public static double Circumference(double radius)
+        {
+            return 2 * 3.14159265358979323846 * radius;
+        }
+        /// <summary>
+        /// Takes a list of doubles and returns the average
+        /// </summary>
+        /// <param name="list">Your list</param>
+        /// <returns>The average</returns>
+        public static double GetAverage(List<double> list)
+        {
+            double average = 0;
+            int count = 0;
+            foreach(int i in list)
+            {
+                count++;
+                average += i;
+            }
+            return average/ count;
+        }
+        /// <summary>
+        /// Makes a random list of numbers
+        /// </summary>
+        /// <param name="max">max value of numbers in the list</param>
+        /// <param name="min">min value of numbers in the list</param>
+        /// <param name="size">how many numbers are in the list</param>
+        /// <returns>the list of random numbers</returns>
+        public static List<int> GetRandomList(int max, int min, int size)
+        {
+            Random generator = new Random();
+            List<int> list = new List<int>();
+            for(int i = 1; i <= size; i++)
+            {
+                list.Add(generator.Next(min,max));
+            }
+            return list;
+        }
+        /// <summary>
+        /// Gets the Y intercept from slope and a point
+        /// </summary>
+        /// <param name="slope">The slope of the line</param>
+        /// <param name="y1">The y value of the point</param>
+        /// <param name="x1">The x value of the point</param>
+        /// <returns>The y intercept of the line</returns>
+        public static double GetYIntercept(double slope, int y1, int x1)
+        {
+            return (y1 - (slope * x1));
+        }
+        /// <summary>
+        /// Gets the Y intercept from a slope and a point
+        /// </summary>
+        /// <param name="slope">Slope of the line</param>
+        /// <param name="point">a point of the line</param>
+        /// <returns>The Y intercept of the line</returns>
+        public static double GetYIntercept(double slope, Point point)
+        {
+            return (point.Y - (slope * point.X));
+        }
+        /// <summary>
+        /// Gets a random array from the max, min and size
+        /// </summary>
+        /// <param name="max">Max value in the array</param>
+        /// <param name="min">Min value in the array</param>
+        /// <param name="size">Size of the array</param>
+        /// <returns>The array</returns>
+        public static int[] GetRandomArray(int max, int min, int size)
+        {
+            Random generator = new Random();
+            int[] list = new int[size];
+            for (int i = 1; i <= size; i++)
+            {
+                list[i]=(generator.Next(min, max));
+            }
+            return list;
+        }
     }
 }
